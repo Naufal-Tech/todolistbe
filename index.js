@@ -5,6 +5,11 @@ import bodyParser from 'body-parser';
 
 import Connection from './database/db.js';
 import Routes from './server/route.js';
+import dontenv from 'dotenv';
+
+dontenv.config();
+
+const PORT = process.env.PORT;
 
 const app = express();  
 
@@ -14,8 +19,6 @@ app.use(bodyParser.json({ extended: true}));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/', Routes);
-
-const PORT = 8000;
 
 Connection();
 
