@@ -11,8 +11,8 @@ const registerUser = asyncHandler(async (req, res) => {
   const { name, password } = req.body;
 
   if (!name || !password) {
-    res.status(400).json({ message: "Please add all fields!" });
-    throw new Error("Please add all fields!");
+    res.status(400).json({ message: "Please check the fields!" });
+    throw new Error("Please check the fields!");
   }
 
   // Check user if already registered
@@ -62,8 +62,8 @@ const loginUser = asyncHandler(async (req, res) => {
       token: generateToken(user._id),
     });
   } else {
-    res.status(400).json({ message: "Incorrect email or password!" });
-    throw new Error("Incorrect email or password!");
+    res.status(400).json({ message: "Incorrect ID or password!" });
+    throw new Error("Incorrect ID or password!");
   }
 });
 
