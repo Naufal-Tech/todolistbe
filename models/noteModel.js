@@ -22,4 +22,4 @@ const noteSchema = mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("Catatan", noteSchema);
+module.exports = mongoose.model("Notes", noteSchema);
